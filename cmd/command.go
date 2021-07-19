@@ -2,7 +2,7 @@ package main
 
 import (
 	"flag"
-	"fmt"
+	"log"
 	"strings"
 
 	"github.com/akame-moe/email-notification/emailsender"
@@ -35,6 +35,6 @@ func main() {
 	email := emailsender.NewEmailSender("~/.email.yml")
 	ok, err := email.Send(subject, content, attachments)
 	if !ok {
-		fmt.Println("error:", err)
+		log.Println("error:", err)
 	}
 }

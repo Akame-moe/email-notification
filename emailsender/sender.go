@@ -50,7 +50,7 @@ func (sender *EmailSender) Send(subject, content string, attachments ...interfac
 		switch t := item.(type) {
 		case string:
 			if _, err := os.Stat(t); os.IsNotExist(err) {
-				fmt.Println(t, "not exists.")
+				log.Println(t, "not exists.")
 			} else {
 				letter.AttachFile(t)
 			}
